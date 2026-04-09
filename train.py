@@ -1,4 +1,5 @@
 import pandas as pd
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import precision_score, recall_score
@@ -20,3 +21,5 @@ recall = recall_score(y_test, y_pred)
 print(f"Отказано: {y_pred.mean() * 100:.0f}%")
 print(f"Точность: {precision * 100:.0f}%")
 print(f"Полнота: {recall * 100:.0f}%")
+
+joblib.dump(model, "model.pkl")
